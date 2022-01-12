@@ -3,15 +3,37 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+function incNumber(id) {
+  // let id = $(this).attr('id');
+  // id = id.split('-')[2];
+  let myDisplay = $(`#counter_${id}`);
+  //  let plus = $(item-quan-${$(this).attr('id')})
+  //debugger;
+  // debugger;
+  let oldNumber = myDisplay.text();
+  let newNumber = Number(oldNumber) + 1;
+  myDisplay.text(newNumber);
+}
+function decNumber(id) {
+  // let myDisplay = $(.counter);
+  let myDisplay = $(`#counter_${id}`);
+    let oldNumber = myDisplay.text();
+  let newNumber = Number(oldNumber) - 1;
+  if (newNumber < 0) {
+    newNumber = 0;
+  }
+  myDisplay.text(newNumber);
+}
 $('document').ready(()=>{
   console.log("ready");
-
   const createMenuElement = function(item) {
     console.log(item);
     const $avatar = $('<img />').attr("src", `${item.image}`);
     const $name = $('<span>').text(`${item.name}`);
     const $price = $('<span>').attr("id","user-email").text(`${item.price}`);
     const $content = $('<p>').text(`${item.description}`);
+  
+
     const $hr = $('<hr />');
 
     const $item = $('<article>');
@@ -20,8 +42,9 @@ $('document').ready(()=>{
 
     const $divHeader = $('<div>');
     const $divMain = $('<div>');
-    const $divFooter = $('<div> </div>');
-
+    const $divFooter = $(
+      `<div><input type="button" value="+" id="item-quan-${item.id}" class="inc" onclick="incNumber(${item.id})"/> <output name="counter" class="counter" id=counter_${item.id} for="item-quan">0</output> <input type="button" value="-" id = "item-quan-negative-${item.id}" class="dec" onclick="decNumber(${item.id})"/></div>`
+    );
     $header.append($divHeader);
     $divHeader.append($avatar);
     $divHeader.append($name);

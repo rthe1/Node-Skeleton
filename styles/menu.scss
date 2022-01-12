@@ -30,18 +30,19 @@ article hr {
     border: 2px solid #545149;
 }
 
-article footer i {
+article footer input {
     color: #4056A1;
+    border: none;
+    background-color: white;
 }
 
-article footer i:hover {
+article footer input:hover {
     color: rgb(172, 148, 13);
-}
-
-#user-email {
-    color: #c9d1ec;
 }
 
 article:hover{
     box-shadow: 5px 5px 5px 5px grey;
+}
+#user-email {
+    color: #c9d1ec;
 }
