@@ -1,0 +1,47 @@
+
+article {
+    margin: 1em 0;
+    padding: 1em;
+    border: 3px solid #545149;
+}
+
+article footer, article header div, article header {
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+    font-size: medium;
+}
+
+article>header>div>img {
+    height: 2.5em;
+    padding-right: 0.5em;
+}
+
+article>header span {
+    padding-top: 0.7em;
+}
+
+article p {
+    padding-top: 1em;
+    font-size: large;
+}
+
+article hr {
+    border: 2px solid #545149;
+}
+
+article footer i {
+    color: #4056A1;
+}
+
+article footer i:hover {
+    color: rgb(172, 148, 13);
+}
+
+#user-email {
+    color: #c9d1ec;
+}
+
+article:hover{
+    box-shadow: 5px 5px 5px 5px grey;
+}

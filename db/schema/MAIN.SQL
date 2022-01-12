@@ -5,6 +5,14 @@ CREATE TABLE customer (
   special_instructions TEXT
 );
 
+CREATE TABLE menu_item (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(50),
+  description TEXT,
+  image VARCHAR(255),
+  price FLOAT,
+  item_quantity INTEGER
+);
 
 CREATE TABLE customer_order (
   id SERIAL PRIMARY KEY,
@@ -14,14 +22,7 @@ CREATE TABLE customer_order (
   menu_id INTEGER REFERENCES menu_item(id)
 );
 
-CREATE TABLE menu_item (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(50),
-  description TEXT,
-  image VARCHAR(255),
-  price FLOAT,
-  item_quantity INTEGER
-);
+
 
 
 
