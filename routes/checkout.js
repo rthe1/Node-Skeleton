@@ -3,12 +3,24 @@ const router  = express.Router();
 
 module.exports = (db) => {
 
- 
+
   router.get("/", (req, res) => {      // non-AJAX route; returns full page of HTML
-    res.render("checkout");
+
+    const templateVars = {
+      order: req.session.order
+    };
+    console.log(templateVars);
+    res.render("checkout", templateVars);
+
   });
+
   router.post("/add-cart",(req, res) => {
-   console.log(req.body);
+
+    const order = req.body.order;
+    req.session.order = order;
+    res.redirect("/checkout");
+
+   console.log(order);
   });
 
 

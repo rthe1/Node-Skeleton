@@ -3,7 +3,7 @@
 
 <head>
   <title>Home Page</title>
-  
+
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
   <!-- <link rel="stylesheet" href="/styles/main.css" type="text/css" /> -->
@@ -15,12 +15,70 @@
 </head>
 
 <body>
-    <%- include('partials/_header') %>
+  <%- include('partials/_header') %>
     <div class="menu">
-        <h1>Welcome to the Menu Page</h1>
-        <div class="col-md-4 mb-5 item-container">    
-        </div>
+      <h1>Welcome to the Menu Page</h1>
+      <div class="col-md-4 mb-5 item-container">
+        <% for (const menu_item in menu_data){ %>
+        <article>
+
+          <header>
+            <img src=`${item.image}` alt="">
+            <span></span>
+          </header>
+
+
+          <div>
+
+            <p></p>
+            <hr/>
+
+          </div>
+
+
+          <footer>
+            <span></span>
+            <div>
+              <input type="button" value="+" id="item-quan-${item.id}" class="inc" onclick="incNumber(${item.id})" />
+              <output name="counter" class="counter" id=counter_${item.id} for="item-quan">0</output>
+              <input type="button" value="-" id="item-quan-negative-${item.id}" class="dec"
+                onclick="decNumber(${item.id})" />
+            </div>`
+          </footer>
+
+        </article>
+        <% } %>
       </div>
-      
+    </div>
+
+
+
+
+    const $avatar = $('<img />').attr("src", `${item.image}`);
+    const $name = $('<span>').text(`${item.name}`);
+      const $price = $('<span>').attr("id", "user-email").text(`${item.price}`);
+        const $content = $('<p>').text(`${item.description}`);
+
+
+          const $hr = $('
+          <hr />');
+
+          const $item = $('
+        <article>');
+          const $header = $('<header>');
+            const $footer = $('<footer>');
+
+              const $divHeader = $('<div>');
+                const $divMain = $('<div>');
+                  const $divFooter = $(
+                  `<div><input type="button" value="+" id="item-quan-${item.id}" class="inc"
+                      onclick="incNumber(${item.id})" />
+                    <output name="counter" class="counter" id=counter_${item.id} for="item-quan">0</output> <input
+                      type="button" value="-" id="item-quan-negative-${item.id}" class="dec"
+                      onclick="decNumber(${item.id})" />
+                  </div>`
+                  );
+
 </body>
+
 </html>
