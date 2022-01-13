@@ -1,18 +1,20 @@
+// const res = require("express/lib/response");
+
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 function incNumber(id) {
-  // let id = $(this).attr('id');
-  // id = id.split('-')[2];
   let myDisplay = $(`#counter_${id}`);
-  //  let plus = $(item-quan-${$(this).attr('id')})
-  //debugger;
-  // debugger;
   let oldNumber = myDisplay.text();
   let newNumber = Number(oldNumber) + 1;
   myDisplay.text(newNumber);
+  $.post("/checkout/add-cart", {
+    menuId: id,
+    itemQuantity: newNumber
+  })
+  console.log(data);
 }
 function decNumber(id) {
   // let myDisplay = $(.counter);
@@ -73,10 +75,12 @@ $('document').ready(()=>{
     }
   
   };
+  //Ajax to get the data from back end to the front end
  $.get("/api/menu")
  .then(data => {
    console.log(data);
    renderItems(data.templateVars);
  });
+
   
 });

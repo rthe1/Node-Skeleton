@@ -21,21 +21,25 @@
 
       <form action="#" method="POST">
 
-        <label for="fname">First name:</label>
+        <h6>Customer Name</h6>
+         <input id="customer_name" class="form-control" type="text" name="Customer Name" placeholder="Please enter your name" style="width: 200px">
+         <br>
+        <h6>Contact Number</h6>
+         <input id="phone_number" class="form-control" type="phone" name="Contact" pattern="[0-9]{10}"
+         required placeholder="Please enter your contact number" style="width: 200px">
+         <small>Format: 1234567890</small>
+         <br>
+         <br>
+         <h6>E-mail:</h6>
+         <input id="email" class="form-control" type="text" name="email" placeholder="Please enter your E-mail" style="width: 200px">
         <br>
-        <input type="text" id="fname" name="fname">
+        <h6>Special Instructions</h6>
 
-        <label for="email">E-mail:</label>
+         <input id="special_instructions" class="form-control" type="text" name="email" placeholder="Any Special Instructions?" style="width: 200px">
         <br>
-        <input type="text" id="email" name="email">
 
-        <label for="phone">Phone:</label>
-        <br>
-        <input type="text" id="phone" name="phone">
+      <button type="submit" >Confirm Order</button>
 
-        <label for="special_instructions">Special Instructions:</label>
-        <br>
-        <input type="text-area" id="special_instructions" name="special_instructions">
       </form>
 
     </div>
@@ -46,15 +50,15 @@
 
         <div id="img-title-container">
 
-          <img id="checkout-img" src="" alt="">
-          <h3 class="item-title"></h3>
+          <img id="checkout-img" src="" alt="food image">
+          <h3 class="item-title">food item</h3>
 
         </div>
 
         <div id="desc-qty-container">
 
-          <p class="item-description"></p>
-          <h6 class="item-qty"></h6>
+          <p class="item-description">aqwertyuiopsdfghj</p>
+          <h6 class="item-qty">100</h6>
 
         </div>
 
@@ -63,8 +67,8 @@
 
       <div class="price-total">
 
-        <h5 id="checkout-msg"></h5>
-        <h3 id="order-total"></h3>
+        <h5 id="checkout-msg">hello sos and so</h5>
+        <h3 id="order-total">4345y.</h3>
 
 
       </div>
