@@ -25,7 +25,7 @@ $('document').ready(()=>{
     $header.append($divHeader);
     $divHeader.append($avatar);
     $divHeader.append($name);
-    
+
     $divMain.append($content);
     $divMain.append($hr);
 
@@ -48,12 +48,12 @@ $('document').ready(()=>{
       const newItem = createMenuElement(items[item]);
       $itemContainer.prepend(newItem);
     }
-  
+
   };
  $.get("/api/menu")
  .then(data => {
    console.log(data);
    renderItems(data.templateVars);
  });
-  
+
 });
