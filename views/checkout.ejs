@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
-  
+  <title>Checkout Page</title>
+
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
   <link rel="stylesheet" href="/styles/main.css" type="text/css" />
@@ -13,8 +13,64 @@
   <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
 </head>
 
-<body>
-    <%- include('partials/_header') %>
+<body class="checkout-container">
+  <%- include('partials/_header') %>
     <h1>Welcome to the checkout page</h1>
+
+    <div class="order-form">
+
+      <form action="#" method="POST">
+
+        <label for="fname">First name:</label>
+        <br>
+        <input type="text" id="fname" name="fname">
+
+        <label for="email">E-mail:</label>
+        <br>
+        <input type="text" id="email" name="email">
+
+        <label for="phone">Phone:</label>
+        <br>
+        <input type="text" id="phone" name="phone">
+
+        <label for="special_instructions">Special Instructions:</label>
+        <br>
+        <input type="text-area" id="special_instructions" name="special_instructions">
+      </form>
+
+    </div>
+
+    <div class="order-summary">
+
+      <div class="item-summary">
+
+        <div id="img-title-container">
+
+          <img id="checkout-img" src="" alt="">
+          <h3 class="item-title"></h3>
+
+        </div>
+
+        <div id="desc-qty-container">
+
+          <p class="item-description"></p>
+          <h6 class="item-qty"></h6>
+
+        </div>
+
+      </div>
+
+
+      <div class="price-total">
+
+        <h5 id="checkout-msg"></h5>
+        <h3 id="order-total"></h3>
+
+
+      </div>
+
+    </div>
+
 </body>
+
 </html>
