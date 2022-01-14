@@ -49,10 +49,8 @@ const homeRoutes = require("./routes/index");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
-app.get("/menu",(req, res) => {
-  res.render("menu");
-} )
-app.use("/api/menu", menuRoutes(db));
+
+app.use("/menu", menuRoutes(db));
 app.use("/checkout",checkoutRoutes(db));
 app.use("/index",homeRoutes(db));
 // app.use("/api/users", usersRoutes(db));

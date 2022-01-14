@@ -9,9 +9,6 @@
   <!-- <link rel="stylesheet" href="/styles/main.css" type="text/css" /> -->
   <link rel="stylesheet" href="/styles/menu.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/menuscript.js"></script>
 </head>
 
 <body>
@@ -19,65 +16,36 @@
     <div class="menu">
       <h1>Welcome to the Menu Page</h1>
       <div class="col-md-4 mb-5 item-container">
-        <% for (const menu_item in menu_data){ %>
-        <article>
-
-          <header>
-            <img src=`${item.image}` alt="">
-            <span></span>
-          </header>
-
-
-          <div>
-
-            <p></p>
-            <hr/>
-
-          </div>
-
-
-          <footer>
-            <span></span>
-            <div>
-              <input type="button" value="+" id="item-quan-${item.id}" class="inc" onclick="incNumber(${item.id})" />
-              <output name="counter" class="counter" id=counter_${item.id} for="item-quan">0</output>
-              <input type="button" value="-" id="item-quan-negative-${item.id}" class="dec"
-                onclick="decNumber(${item.id})" />
-            </div>`
-          </footer>
-
-        </article>
-        <% } %>
+        <form method="POST" action="/checkout/add-cart">
+          <% for(const menu_item of menu_data){ %>
+            <article>
+              <header>
+                <div>
+                  <img src="<%= menu_item.image %>" alt="">
+                  <span>
+                    <%= menu_item.name %>
+                  </span>
+                </div>
+              </header>
+              <div>
+                <p>
+                  <%= menu_item.description %>
+                </p>
+                <hr />
+              </div>
+              <footer>
+                <span>$<%= menu_item.price %></span>
+                <div>
+                  <input type="number" value="0" name="<%= menu_item.id %>" id="item-quan-<%=menu_item.id%>}"
+                    class="inc" />
+                </div>
+              </footer>
+            </article>
+            <% } %>
+              <button type="submit">Submit</button>
+        </form>
       </div>
     </div>
-
-
-
-
-    const $avatar = $('<img />').attr("src", `${item.image}`);
-    const $name = $('<span>').text(`${item.name}`);
-      const $price = $('<span>').attr("id", "user-email").text(`${item.price}`);
-        const $content = $('<p>').text(`${item.description}`);
-
-
-          const $hr = $('
-          <hr />');
-
-          const $item = $('
-        <article>');
-          const $header = $('<header>');
-            const $footer = $('<footer>');
-
-              const $divHeader = $('<div>');
-                const $divMain = $('<div>');
-                  const $divFooter = $(
-                  `<div><input type="button" value="+" id="item-quan-${item.id}" class="inc"
-                      onclick="incNumber(${item.id})" />
-                    <output name="counter" class="counter" id=counter_${item.id} for="item-quan">0</output> <input
-                      type="button" value="-" id="item-quan-negative-${item.id}" class="dec"
-                      onclick="decNumber(${item.id})" />
-                  </div>`
-                  );
 
 </body>
 

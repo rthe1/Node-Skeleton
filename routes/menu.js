@@ -10,6 +10,7 @@ module.exports = (db) => {
         let templateVars = {
           menu_data: data.rows
         };
+       
         res.render("menu", templateVars);
       })
       .catch(err => {
