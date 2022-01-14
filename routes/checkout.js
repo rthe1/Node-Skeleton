@@ -30,6 +30,14 @@ module.exports = (db) => {
     res.redirect("/checkout");
   });
 
+  router.get("/checkout/confirm", (req, res) => {      // non-AJAX route; returns full page of HTML
+    
+
+      );
+
+
+  });
+
 
   // const form = $('#checkout-form');
   // function handleSubmit(event) {
