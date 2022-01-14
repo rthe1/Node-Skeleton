@@ -46,35 +46,35 @@
     </section>
 
     <section class="order-summary">
-
+      <% for (const item_comp of menu_item) { %>
       <div class="item-summary">
 
         <div id="img-title-container">
 
-          <img id="checkout-img" src="" alt="food image">
-          <h3 class="item-title">food item</h3>
+          <img id="checkout-img" src="<%=item_comp.image%>" alt="food image" width="100px" height ="100px">
+          <h3 class="item-title"><%=item_comp.name%></h3>
 
         </div>
 
         <div id="desc-qty-container">
 
-          <p class="item-description">aqwertyuiopsdfghj</p>
-          <h6 class="item-qty">100</h6>
+          <p class="item-description"><%=item_comp.description %></p>
+          <h6 class="item-qty"><%=item_comp.item_quantity%></h6>
 
         </div>
+      </div>
+      <% } %>
 
       </section>
 
 
       <div class="price-total">
 
-        <h5 id="checkout-msg">hello sos and so</h5>
-        <h3 id="order-total">4345y.</h3>
+        <h5 id="checkout-msg">hahahahaa</h5>
+        <h3 id="order-total">hahahahaa</h3>
 
 
       </div>
-
-    </div>
 
 </body>
 
