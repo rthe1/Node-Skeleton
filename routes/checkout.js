@@ -31,6 +31,16 @@ module.exports = (db) => {
   });
 
 
+  // const form = $('#checkout-form');
+  // function handleSubmit(event) {
+  //   event.preventDefault();
+  //   const formData = new FormData(event.target);
+  //   form.addEventListener('submit', handleSubmit);
+  // }
+
+  // db.query('INSERT INTO customers (name,phone,special_instructions) VALUES ($1,$2,$3)',[])
+
+
 
 
   return router;
